@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 10px;
+        }
+        .container {
+            width: 100%;
+            max-width: 550px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        p strong {
+            color: #4CAF50;
+        }
+        .signature {
+            margin-top: 30px;
+            font-weight: bold;
+            text-align: right;
+            color: #333;
+            font-size: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #4CAF50;
+        }
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+            width: 48%;
+        }
+        .approve {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .reject {
+            background-color: #F44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Leave Application</h2>
+        <p><strong>Subject:</strong> Leave Application for 14th January 2025</p>
+        <p>Respected Ma'am,</p>
+        <p>I hope this letter finds you in good health. I am writing to formally request a leave of absence for today, 14th January 2025, as I need to attend an urgent personal matter in my village.</p>
+        <p>I assure you that I will complete any pending work as quickly as possible and ensure that my responsibilities are not affected by my absence.</p>
+        <p>I kindly request you to grant me leave for one day. Your understanding and support in this matter will be highly appreciated.</p>
+        <p>Thank you for your consideration.</p>
+        <p class="signature">Yours sincerely,<br>Muzammil</p>
+
+        <div class="buttons">
+            <button class="button approve" onclick="sendMessage('approve')">Approve</button>
+            <button class="button reject" onclick="sendMessage('reject')">Reject</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(status) {
+            var message;
+            if (status === 'approve') {
+                message = "Dear Muzammil, Your leave application for 14th January 2025 has been approved.";
+            } else {
+                message = "Dear Muzammil, Your leave application for 14th January 2025 has been rejected.";
+            }
+            var phoneNumber = "+923126893556"; // Your phone number
+            var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
